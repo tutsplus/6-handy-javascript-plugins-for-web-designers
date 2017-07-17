@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Lesson 2 - Example 1</title>
+	
+	<link rel="stylesheet" href="../master/styles.processed.css" />
+</head>
+<body class="lesson-2">
+	
+	<div id="loading-circle" class="loader"></div>
+	
+	<script src="../master/progressbar.min.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {			
+			var element = document.querySelector('#loading-circle');
+			
+			var loadingCircle = new ProgressBar.Circle(element, {
+				strokeWidth: 5,
+				trailWidth: 1,
+				duration: 2500,
+				easing: 'easeIn',
+				from: {
+					color: '#91ffab'
+				},
+				to: {
+					color: '#00b400'
+				},
+				step: function(state, circle) {
+					circle.path.setAttribute('stroke', state.color);					
+				}
+			});
+			
+			loadingCircle.animate(1, function() {
+				element.classList.add('hidden');
+			});
+		});
+	</script>
+</body>
+</html>
