@@ -3,9 +3,9 @@
 
 You can add great functionality to a website by using JavaScript but sometimes writing the necessary code can be time consuming, especially for more complex tasks.
 
-In this course you’ll learn about 6 plugins for vanilla JavaScript that will take away the guess work out of complex tasks like creating progress bars, formatting inputs and more.
+In this course you’ll learn about 6 plugins for vanilla JavaScript that will take away the guess work out of complex tasks like creating progress bars, formatting inputs, lazy loading images, and more.
 
-**Available on [Envato Tuts+](https://tutsplus.com/courses) from August, 2017**
+**Available on [Envato Tuts+](https://tutsplus.com/courses)**
 
 - [Demo lesson 1](http://tutsplus.github.io/6-handy-javascript-plugins-for-web-designers/lesson1/example.html)
 - [Demo lesson 2a](http://tutsplus.github.io/6-handy-javascript-plugins-for-web-designers/lesson2/example-1.html)
