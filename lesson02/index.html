@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handy Vanilla JavaScript Plugins for Web Designers - Lesson 2</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/modern-normalize@0.6.0/modern-normalize.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="grid">
+        <div class="cell">
+            <div class="loading-line container"></div>
+        </div> <!-- end .cell -->
+        <div class="cell">
+            <div class="loading-circle container"></div>
+        </div> <!-- end .cell -->
+        <div class="cell">
+            <div class="loading-semi-circle container"></div>
+        </div> <!-- end .cell -->
+        <div class="cell">
+            <div class="loading-circle-text container"></div>
+        </div> <!-- end .cell -->
+    </div> <!-- end .grid -->
+
+    <script src="../node_modules/progressbar.js/dist/progressbar.min.js/"></script>
+    <script>
+        // Line.
+        var line = new ProgressBar.Line('.loading-line', {
+            color: '#09b0ed',
+            duration: 2000,
+            strokeWidth: 2
+        });
+
+
+        line.animate(1);
+
+        // Circle.
+        var circle = new ProgressBar.Circle('.loading-circle', {
+            color: '#24b0f3',
+            trailColor: '#f4f4f4',
+            duration: 2000,
+            easing: 'easeInOut',
+            strokeWidth: 3,
+            trailWidth: 1,
+            from: { color: '#24b0f3' },
+            to: { color: '#1dd760' },
+            step: function(state, circle) {
+                circle.path.setAttribute('stroke', state.color);
+            }
+        });
+
+        circle.animate(.85);
+
+        // Semi-circle.
+        var semiCircle = new ProgressBar.SemiCircle('.loading-semi-circle', {
+            color: '#24b0f3',
+            trailColor: '#f4f4f4',
+            duration: 5000,
+            easing: 'bounce',
+            strokeWidth: 3,
+            trailWidth: 1,
+            from: { color: '#19a260', width: 1, opacity: 0 },
+            to: { color: '#0d2481', width: 3, opacity: 1 },
+            step: function(state, circle) {
+                circle.path.setAttribute('stroke', state.color);
+                circle.path.setAttribute('stroke-width', state.width);
+                circle.path.setAttribute('opacity', state.opacity);
+            }
+        });
+
+        semiCircle.animate(1);
+        
+        // Circle with percentage text.
+        var circleText = new ProgressBar.Circle('.loading-circle-text', {
+            color: '#24b0f3',
+            duration: 2000,
+            easing: 'easeInOut',
+            strokeWidth: 3,
+            text: {
+                style: null
+            },
+            step: function(state, circleText) {
+                var value = Math.round(circleText.value() * 100);
+    
+                if (value === 0) {
+                    circleText.setText('');
+                } else {
+                    circleText.setText(value + '%');
+                }
+            }
+        });
+
+        circleText.animate(1);
+    </script>
+</body>
+</html>

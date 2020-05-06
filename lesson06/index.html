@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handy Vanilla JavaScript Plugins for Web Designers - Lesson 6</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/modern-normalize@0.6.0/modern-normalize.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide" id="slide-1">
+                    <h1>Take a tour of our platform</h1>
+                </div>
+                <div class="swiper-slide" id="slide-2">
+                    <div class="content">
+                        <h1>Refined checkout process</h1>
+                        <p>The checkout process has been redesigned from scratch and greatly improved. You can now get to the card twice as fast and this leads to a much better user experience.</p>
+                    </div> <!-- end .content -->
+                    <img src="feature-1.svg" alt="Feature">            
+                </div>
+                <div class="swiper-slide" id="slide-3">
+                    <img src="feature-2.svg" alt="Feature">
+                    <div class="content">
+                        <h1>Streamlined onboarding process</h1>
+                        <p>The user onboarding process has been redefined and improved. Getting a user to sign up now requires fewer steps than before and the whole experience is simply better.</p>
+                    </div> <!-- end .content -->
+                </div>
+                <div class="swiper-slide" id="slide-4">
+                    <div class="content">
+                        <h1>Simplified entry workflow</h1>
+                        <p>It's now easier than ever to add new database entries. We've just upgraded our platform and we're seeing 3x increases in speed and reliability.</p>
+                    </div> <!-- end .content -->
+                    <img src="feature-3.svg" alt="Feature">
+                </div>
+            </div> <!-- end .swiper-wrapper -->
+
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- Navigation buttons -->
+            <img src="arrow.svg" alt="Arrow" class="custom-swiper-prev">
+            <img src="arrow.svg" alt="Arrow" class="custom-swiper-next">
+        </div> <!-- end .swiper-container -->
+    </div> <!-- end .container -->
+    
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <script>
+        var mySwiper = new Swiper('.swiper-container',  {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                dynamicBullets: true
+            },
+            keyboard: {
+                enabled: true,
+            },
+            navigation: {
+                nextEl: '.custom-swiper-next',
+                prevEl: '.custom-swiper-prev'
+            }
+        });
+    </script>
+</body>
+</html>

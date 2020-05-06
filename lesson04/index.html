@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handy Vanilla JavaScript Plugins for Web Designers - Lesson 4</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/modern-normalize@0.6.0/modern-normalize.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container c1">
+        <div class="content" data-trigger-always data-slideInTop>
+            <h1>What's new to our platform</h1>
+        </div>
+    </div> <!-- end .container -->
+
+    <div class="container c2">
+        <div class="content" data-trigger data-slideInRight>
+            <h1>Refined checkout process</h1>
+            <p>The checkout process has been redesigned from scratch and greatly improved. You can now get to the card twice as fast and this leads to a much better user experience.</p>
+        </div> <!-- end .content -->
+        <img src="feature-1.svg" alt="Feature" data-trigger data-slideInLeft>
+    </div> <!-- end .container -->
+
+    <div class="container c3">
+        <img src="feature-2.svg" alt="Feature" data-trigger data-slideInRight>
+        <div class="content" data-trigger data-slideInLeft>
+            <h1>Streamlined onboarding process</h1>
+            <p>The user onboarding process has been redefined and improved. Getting a user to sign up now requires fewer steps than before and the whole experience is simply better.</p>
+        </div> <!-- end .content -->
+    </div> <!-- end .container -->
+
+    <div class="container c4">
+        <div class="content" data-trigger data-slideInRight>
+            <h1>Simplified entry workflow</h1>
+            <p>It's now easier than ever to add new database entries. We've just upgraded our platform and we're seeing 3x increases in speed and reliability.</p>
+        </div> <!-- end .content -->
+        <img src="feature-3.svg" alt="Feature" data-trigger data-slideInLeft>
+    </div> <!-- end .container -->
+
+    <script src="ScrollTrigger.min.js"></script>
+    <script>
+        var trigger = new ScrollTrigger.default({
+            trigger: {
+                once: true,
+                offset: {
+                    element: {
+                        y: 300
+                    }
+                }
+            }
+        });
+
+        trigger.add('[data-trigger]');
+        trigger.add('[data-trigger-always]', { once: false });
+    </script>
+</body>
+</html>

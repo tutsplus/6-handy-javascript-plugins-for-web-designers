@@ -1,0 +1,68 @@
+// Demo styles.
+body {
+    line-height: 1.5;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+
+    @media screen and (min-width: 1200px) {
+        flex-direction: row;
+        text-align: left;
+        padding: 10rem 20rem;
+    }
+}
+
+.c1 {
+    background-color: #fbfbfb;
+    color: #2b3e50;
+}
+
+.c2 {
+    background-color: #19bb9d;
+}
+
+.c3 {
+    background-color: #2b3e50;
+}
+
+.c4 {
+    background-color: #2a80b9;
+}
+
+.content {
+    padding: 5rem;
+    
+    @media screen and (min-width: 1200px) {
+        & + img {
+            margin-left: 10rem;
+        }
+        
+        img + & {
+            margin-left: 10rem;
+        }
+    }
+}
+
+img {
+    max-width: 90%;
+
+    @media screen and (min-width: 1200px) {
+        max-width: 30rem;
+    }
+}
+
+.logo {
+    img {
+        width: 3rem;
+        height: auto;
+    }
+}

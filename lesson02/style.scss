@@ -1,0 +1,48 @@
+// Demo styles.
+body {
+    background-color: #f4f4f4;
+    color: #353847;
+}
+
+.grid {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+}
+
+.cell {
+    height: calc(50vh - 1.5rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    flex-direction: column;
+    padding: 2rem;
+
+    div {
+        margin: 1rem;
+    }
+}
+
+// ProgressBar.js
+.container {
+    // These are used to determine the overall size of the progress bar.
+    width: 15rem;
+    height: 15rem;
+}
+
+.loading-circle-text {
+    position: relative;
+
+    .progressbar-text {
+        color: #f36f00;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        padding: 0;
+        margin: 0;
+        font-style: italic;
+    }
+}

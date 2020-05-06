@@ -1,0 +1,74 @@
+body {
+  background-color: #353847;
+  color: #353847;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.container {
+  background-color: #ffffff;
+  padding: 3rem;
+  border-radius: 8px;
+  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.05); }
+
+form .fields {
+  display: flex; }
+
+form label {
+  display: block;
+  margin-bottom: .75rem;
+  font-size: 80%;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  opacity: .75; }
+
+form input[type="text"] {
+  background-color: #ebebee;
+  border: 0;
+  border-radius: 4px;
+  padding: 1rem;
+  outline: none;
+  transition: all .2s ease-in-out; }
+  form input[type="text"]:hover, form input[type="text"]:focus {
+    background-color: #dddde2; }
+
+form #cc-exp-date,
+form #cc-cvv {
+  width: 6rem; }
+
+form #cc-number {
+  width: 20rem;
+  background-size: 2rem;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 1rem) center; }
+  form #cc-number.visa {
+    background-image: url(icons/cc-visa.svg); }
+  form #cc-number.amex {
+    background-image: url(icons/cc-amex.svg); }
+  form #cc-number.discover {
+    background-image: url(icons/cc-discover.svg); }
+  form #cc-number.jcb {
+    background-image: url(icons/cc-jcb.svg); }
+  form #cc-number.mastercard {
+    background-image: url(icons/cc-mastercard.svg); }
+
+form button {
+  margin-top: 1.5rem;
+  border-radius: 4px;
+  background-color: #1da463;
+  border: none;
+  padding: .75rem 1.5rem;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all .2s ease-in-out; }
+  form button:hover {
+    background-color: #21ba70; }
+
+.form-group {
+  margin-right: 1.5rem;
+  position: relative; }
+
+h1 {
+  margin-bottom: 3rem; }

@@ -1,0 +1,47 @@
+// Demo styles.
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: #f4f4f4;
+    color: rgb(53, 56, 71);
+    line-height: 1.5;
+    padding: 3rem 0;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Halant', serif;
+    line-height: 1.5;
+    margin: 0 0 1.5rem;
+}
+
+p {
+    color: rgba(53, 56, 71, .8);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.container {
+    width: 75%;
+    margin: auto;
+}
+
+// Darkmode.
+.darkmode-toggle {
+    background: #202A2E url(icon-moon.svg) center center no-repeat !important;
+
+    &.darkmode-toggle--white {
+        background: #fbfbfb url(icon-sun.svg) center center no-repeat !important;
+    }
+}
+
+.darkmode--activated {
+    .darkmode-background {
+        background-color: #e9e9e9;
+    }
+
+    input[type='text'],
+    textarea {
+        background-color: #dbdbdb;
+    }
+}
