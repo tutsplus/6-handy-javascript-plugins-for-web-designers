@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handy Vanilla JavaScript Plugins for Web Designers - Lesson 3</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/modern-normalize@0.6.0/modern-normalize.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+		<h1>Enter your credit card information.</h1>
+
+		<form action="">
+			<div class="fields">
+                <div class="form-group">
+                    <label for="cc-number">Credit card number</label>
+                    <input type="text" name="cc-number" id="cc-number" />
+                </div> <!-- end .form-group -->
+    
+                <div class="form-group">
+                    <label for="cc-exp-date">Exp. date</label>
+                    <input type="text" name="cc-exp-date" id="cc-exp-date" />
+                </div> <!-- end .form-group -->
+    
+                <div class="form-group">
+                    <label for="cc-cvv">CVV</label>
+                    <input type="text" name="cc-cvv" id="cc-cvv" />
+                </div> <!-- end .form-group -->
+            </div> <!-- end .fields -->
+            
+			<button type="submit">Submit</button>
+		</form>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.5.10/cleave.min.js"></script>
+    <script>
+        var cleaveCCNumber = new Cleave('#cc-number', {
+            creditCard: true,
+            onCreditCardTypeChanged: function(type) {
+                document.querySelector('#cc-number').classList = type;
+            }
+        });
+        
+        var cleaveCCData = new Cleave('#cc-exp-date', {
+            date: true,
+            datePattern: ['m', 'y']
+        });
+
+        var cleaveCCCVV = new Cleave('#cc-cvv', {
+            blocks: [3],
+            numericOnly: true
+        });
+    </script>
+</body>
+</html>
